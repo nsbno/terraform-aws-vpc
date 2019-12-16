@@ -47,6 +47,7 @@ resource "aws_vpc_endpoint" "ssmmessages" {
   tags                = local.tags
   private_dns_enabled = true
 }
+
 resource "aws_vpc_endpoint" "ec2" {
   service_name        = "com.amazonaws.${var.region}.ec2"
   vpc_id              = module.vpc.vpc_id
@@ -56,6 +57,7 @@ resource "aws_vpc_endpoint" "ec2" {
   tags                = local.tags
   private_dns_enabled = true
 }
+
 resource "aws_vpc_endpoint" "ec2messages" {
   service_name        = "com.amazonaws.${var.region}.ec2messages"
   vpc_id              = module.vpc.vpc_id
